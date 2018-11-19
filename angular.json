@@ -30,7 +30,7 @@
                 "glob": "package.json",
                 "input": "./server/",
                 "output": "./"
-              },
+              }
             ],
             "styles": [
               "src/styles.css"

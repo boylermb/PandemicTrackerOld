@@ -1,0 +1,15 @@
+<div
+cdkDropList
+#doneList="cdkDropList"
+[cdkDropListData]="discardPile"
+[cdkDropListConnectedTo]="[todoList]"
+class="example-list"
+(cdkDropListDropped)="drop($event)">
+<div class="example-box" 
+    [style.backgroundImage]="'url(/assets/img/'+item.color+')'"     
+    cdkDrag 
+    *ngFor="let item of discardPile;"> 
+  {{item.name}}
+ 
+</div>
+</div>

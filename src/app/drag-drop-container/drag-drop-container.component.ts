@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
 import { City } from '../city'
 import { CardColors } from '../cardColors.enum'
@@ -10,41 +10,12 @@ import { CardColors } from '../cardColors.enum'
 })
 export class DragDropContainerComponent implements OnInit {
 
-  constructor() { }
+  @Input() infectionDeck: City[]
 
   ngOnInit() {
   }
 
-  discardPile: City[] = [
-    {
-      "name": 'NEW YORK',
-      "color": CardColors.BLUE
-    },
-    {
-      "name": 'DENVER',
-      "color": CardColors.BLUE
-    },
-    {
-      "name": 'NEW YORK',
-      "color": CardColors.BLUE
-    },
-    {
-      "name": 'JACKSONVILLE',
-      "color": CardColors.YELLOW
-    },
-    {
-      "name": 'NEW YORK',
-      "color": CardColors.BLUE
-    },
-    {
-      "name": 'TRIPOLI',
-      "color": CardColors.BLACK
-    },
-    {
-      "name": 'BEIJING',
-      "color": CardColors.RED
-    }
-  ];
+  
 
   drop(event: CdkDragDrop<City[]>) {
     if (event.previousContainer === event.container) {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { City } from './city'
+import { CardColors } from './cardColors.enum'
 /**
  * @title Drag&Drop connected sorting
  */
@@ -12,6 +13,36 @@ import { Component } from '@angular/core';
 export class CdkDragDropConnectedSortingExample {
 
 
+  infectionDeck: City[] = [
+    {
+      "name": 'NEW YORK',
+      "color": CardColors.BLUE
+    },
+    {
+      "name": 'DENVER',
+      "color": CardColors.BLUE
+    },
+    {
+      "name": 'NEW YORK',
+      "color": CardColors.BLUE
+    },
+    {
+      "name": 'JACKSONVILLE',
+      "color": CardColors.YELLOW
+    },
+    {
+      "name": 'NEW YORK',
+      "color": CardColors.BLUE
+    },
+    {
+      "name": 'TRIPOLI',
+      "color": CardColors.BLACK
+    },
+    {
+      "name": 'BEIJING',
+      "color": CardColors.RED
+    }
+  ];
 
 }
 /**  Copyright 2018 Google Inc. All Rights Reserved.

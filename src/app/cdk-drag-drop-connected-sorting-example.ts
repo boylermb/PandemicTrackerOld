@@ -12,7 +12,6 @@ import { CardColors } from './cardColors.enum'
 
 export class CdkDragDropConnectedSortingExample {
 
-
   infectionDeck: City[] = [
     {
       "name": 'NEW YORK',
@@ -41,6 +40,11 @@ export class CdkDragDropConnectedSortingExample {
     {
       "name": 'BEIJING',
       "color": CardColors.RED
+    },
+    {
+      "name": ' ',
+      "color": CardColors.EPIDEMIC;
+      
     }
   ];
 

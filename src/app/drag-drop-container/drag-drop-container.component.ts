@@ -13,9 +13,7 @@ export class DragDropContainerComponent implements OnInit {
   @Input() infectionDeck: City[]
 
   ngOnInit() {
-  }
-
-  
+  }  
 
   drop(event: CdkDragDrop<City[]>) {
     if (event.previousContainer === event.container) {

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { City } from './city'
+import { ICity } from './city'
 import { CardColors } from './cardColors.enum'
+import { DiscardPile } from './discard-pile';
 /**
  * @title Drag&Drop connected sorting
  */
@@ -12,7 +13,7 @@ import { CardColors } from './cardColors.enum'
 
 export class CdkDragDropConnectedSortingExample {
 
-  infectionDeck: City[] = [
+  infectionDeck: ICity[] = [
     {
       "name": 'NEW YORK',
       "color": CardColors.BLUE
@@ -40,15 +41,15 @@ export class CdkDragDropConnectedSortingExample {
     {
       "name": 'BEIJING',
       "color": CardColors.RED
-    },
-    {
-      "name": ' ',
-      "color": CardColors.EPIDEMIC;
-      
     }
+
   ];
 
+  private _discardPile: DiscardPile = new DiscardPile(8);
+  public get discardPile(): DiscardPile {
+    return this._discardPile;
+  }
+  public set discardPile(value: DiscardPile) {
+    this._discardPile = value;
+  }
 }
-/**  Copyright 2018 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */

@@ -10,8 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-module';
 
 import { CdkDragDropConnectedSortingExample } from './app/cdk-drag-drop-connected-sorting-example';
-import { OrderCitiesPipe } from './app/order-cities.pipe';
-import { DiscardPileComponent } from './app/discard-pile/discard-pile.component';
 import { DragDropContainerComponent } from './app/drag-drop-container/drag-drop-container.component';
 
 @NgModule({
@@ -26,8 +24,6 @@ import { DragDropContainerComponent } from './app/drag-drop-container/drag-drop-
   ],
   entryComponents: [CdkDragDropConnectedSortingExample],
   declarations: [CdkDragDropConnectedSortingExample,
-    OrderCitiesPipe,
-    DiscardPileComponent,
     DragDropContainerComponent],
   bootstrap: [CdkDragDropConnectedSortingExample],
   providers: []

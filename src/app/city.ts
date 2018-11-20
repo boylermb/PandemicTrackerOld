@@ -1,5 +1,5 @@
 
-export interface City {
+export interface ICity {
     name: string, 
     color: string
   }

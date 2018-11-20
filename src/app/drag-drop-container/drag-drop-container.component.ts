@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
-import { City } from '../city'
+import { ICity } from '../city'
 import { CardColors } from '../cardColors.enum'
 
 @Component({
@@ -10,12 +10,12 @@ import { CardColors } from '../cardColors.enum'
 })
 export class DragDropContainerComponent implements OnInit {
 
-  @Input() infectionDeck: City[]
+  @Input() infectionDeck: ICity[]
 
   ngOnInit() {
   }  
 
-  drop(event: CdkDragDrop<City[]>) {
+  drop(event: CdkDragDrop<ICity[]>) {
     if (event.previousContainer === event.container) {
       event.container.data.sort((a, b) => {
         if (a.color > b.color) {

@@ -16,29 +16,32 @@ export class DragDropContainerComponent implements OnInit {
 
   drop(event: CdkDragDrop<City[]>) {
     if (event.previousContainer === event.container) {
-      event.container.data.sort((a, b) => {
-        if (a.color > b.color) {
-          return 1;
-        }
-        if (a.color < b.color) {
-          return -1;
-        }
-        if (a.name > b.name) {
-          return 1;
-        }
-        if (a.name < b.name) {
-          return -1;
-        }
-
-        return 0;
-      })
-      //moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      this.SortCities(event.container.data);      
     } else {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-    }
+      this.SortCities(event.container.data);   
+    }   
 
   }
+  private SortCities(cities: City[]){
+    cities.sort((a, b) => {
+    if (a.color > b.color) {
+      return 1;
+    }
+    if (a.color < b.color) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    if (a.name < b.name) {
+      return -1;
+    }
+
+    return 0;
+  })
+}
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ICity } from './city'
+import { City, CityMaker } from './city'
 import { CardColors } from './cardColors.enum'
 import { DiscardPile } from './discard-pile';
 /**
@@ -13,39 +13,21 @@ import { DiscardPile } from './discard-pile';
 
 export class CdkDragDropConnectedSortingExample {
 
-  infectionDeck: ICity[] = [
-    {
-      "name": 'NEW YORK',
-      "color": CardColors.BLUE
-    },
-    {
-      "name": 'DENVER',
-      "color": CardColors.BLUE
-    },
-    {
-      "name": 'NEW YORK',
-      "color": CardColors.BLUE
-    },
-    {
-      "name": 'JACKSONVILLE',
-      "color": CardColors.YELLOW
-    },
-    {
-      "name": 'NEW YORK',
-      "color": CardColors.BLUE
-    },
-    {
-      "name": 'TRIPOLI',
-      "color": CardColors.BLACK
-    },
-    {
-      "name": 'BEIJING',
-      "color": CardColors.RED
-    }
-
+  infectionDeck: City[] = [
+    CityMaker.create("NEW YORK", CardColors.BLUE),
+    CityMaker.create("DENVER", CardColors.BLUE),
+    CityMaker.create("JACKSONVILLE", CardColors.YELLOW),
+    CityMaker.create("TRIPOLI", CardColors.BLACK),
+    CityMaker.create("NEW YORK", CardColors.BLUE),
+    CityMaker.create("NEW YORK", CardColors.BLUE),
+    CityMaker.create("BEIJING", CardColors.RED)
   ];
 
-  private _discardPile: DiscardPile = new DiscardPile(8);
+  firstDiscardPile: City[] = [
+    CityMaker.create(" ", CardColors.EPIDEMIC)
+  ];
+
+  private _discardPile: DiscardPile = new DiscardPile(7);
   public get discardPile(): DiscardPile {
     return this._discardPile;
   }

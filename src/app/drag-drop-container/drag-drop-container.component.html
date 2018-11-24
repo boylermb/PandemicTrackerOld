@@ -1,9 +1,9 @@
-<div cdkDropList #doneList="cdkDropList" 
-[cdkDropListData]="infectionDeck" 
-[cdkDropListConnectedTo]="[todoList]" 
-class="example-list"
-  (cdkDropListDropped)="drop($event)">
+<div cdkDropList #doneList="cdkDropList" [cdkDropListData]="infectionDeck" class="example-list" (cdkDropListDropped)="drop($event)">
   <div class="example-box" [style.backgroundImage]="'url(/assets/img/'+item.color+')'" cdkDrag *ngFor="let item of infectionDeck;">
     {{item.name}}
+    <button mat-mini-fab color="warn">
+      <mat-icon aria-label="xEample icon-button with a heart icon">keyboard_arrow_right
+      </mat-icon>
+    </button>
   </div>
 </div>

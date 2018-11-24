@@ -1,4 +1,3 @@
 {
-    "appService.deploySubpath": "dist",
-    "appService.defaultWebAppToDeploy": "/subscriptions/5bac29de-f022-40e6-92f5-de47847a20df/resourceGroups/PayAsYouGoResourceGroup/providers/Microsoft.Web/sites/PandemicTracker"
+    "appService.deploySubpath": "dist"
 }

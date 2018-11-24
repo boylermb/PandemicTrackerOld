@@ -1,24 +1,15 @@
-import { ICity } from './city'
+import { City, CityMaker } from './city'
 import { CardColors } from './cardColors.enum';
 
 export class DiscardPile {
     constructor(numberOfEpidemics : number){
-        this.epidemicGroups = new Array<ICity[]>();
+        this.epidemicGroups = new Array<City[]>();
         for (var _i = 0; _i < numberOfEpidemics; _i++)
         {            
-            this.epidemicGroups.push(this.newEpidemic);
+            this.epidemicGroups.push([CityMaker.create(" ", CardColors.EPIDEMIC)]);
         }
 
     }
-    epidemicGroups : Array<ICity[]>
+    epidemicGroups : Array<City[]>
 
-    newEpidemic : ICity[] = [
-        {
-            name : " ",
-            color : CardColors.EPIDEMIC
-        }
-    ]
-    addEpidemic(index : number){
-        
-    }
 }

@@ -1,15 +1,18 @@
-<div class="example-container">
-  <h2 style="font-family: Arial, Helvetica, sans-serif;">Infection Deck</h2>
+<div cdkDropListGroup>
+  <div class="example-container">
+    <h2 style="font-family: Arial, Helvetica, sans-serif;">Infection Deck</h2>
 
-  <app-drag-drop-container [infectionDeck]="infectionDeck"></app-drag-drop-container>
+    <app-drag-drop-container [infectionDeck]="infectionDeck"></app-drag-drop-container>
+  </div>
+  <div style="float: right;" class="example-container">
+    <h2 style="font-family: Arial, Helvetica, sans-serif;">Discard Pile</h2>
+    <app-drag-drop-container [infectionDeck]="firstDiscardPile"></app-drag-drop-container>
+    <div *ngFor="let pile of discardPile.epidemicGroups">
+      <app-drag-drop-container [infectionDeck]="pile">
+      </app-drag-drop-container>
+    </div>
+  </div>
 </div>
-<div style="float: right;" class="example-container" >
-  <h2 style="font-family: Arial, Helvetica, sans-serif;">Discard Pile</h2>
-  <ul *ngFor="let pile of discardPile.epidemicGroups">    
-    <app-drag-drop-container [infectionDeck]="pile" ></app-drag-drop-container>
-  </ul>
-</div>
-
 
 
 <!-- Copyright 2018 Google Inc. All Rights Reserved.

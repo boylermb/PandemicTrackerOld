@@ -5,3 +5,8 @@ export enum CardColors{
     RED = '4RedInfectionCard.png',
     EPIDEMIC = '5EpidemicCard.png'
 }
+
+export interface CardMap {
+    value: string;
+    viewValue: string;
+  }

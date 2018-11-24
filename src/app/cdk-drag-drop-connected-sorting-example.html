@@ -1,16 +1,18 @@
 <div cdkDropListGroup>
   <div class="example-container">
     <h2 style="font-family: Arial, Helvetica, sans-serif;">Infection Deck</h2>
-
     <app-drag-drop-container [infectionDeck]="infectionDeck"></app-drag-drop-container>
+      
+        
   </div>
+  <mat-icon aria-label="add new city" color="warn" (click)="openDialog()">add_circle</mat-icon>
   <div style="float: right;" class="example-container">
     <h2 style="font-family: Arial, Helvetica, sans-serif;">Discard Pile</h2>
     <app-drag-drop-container [infectionDeck]="firstDiscardPile"></app-drag-drop-container>
     <div *ngFor="let pile of discardPile.epidemicGroups">
       <app-drag-drop-container [infectionDeck]="pile">
       </app-drag-drop-container>
-    </div>
+    </div>    
   </div>
 </div>
 

@@ -9,7 +9,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-module';
 
-import { CdkDragDropConnectedSortingExample } from './app/cdk-drag-drop-connected-sorting-example';
+import { CdkDragDropConnectedSortingExample, AddCityDialog } from './app/cdk-drag-drop-connected-sorting-example';
 import { DragDropContainerComponent } from './app/drag-drop-container/drag-drop-container.component';
 
 @NgModule({
@@ -22,9 +22,9 @@ import { DragDropContainerComponent } from './app/drag-drop-container/drag-drop-
     MatNativeDateModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [CdkDragDropConnectedSortingExample],
+  entryComponents: [CdkDragDropConnectedSortingExample, AddCityDialog],
   declarations: [CdkDragDropConnectedSortingExample,
-    DragDropContainerComponent],
+    DragDropContainerComponent, AddCityDialog],
   bootstrap: [CdkDragDropConnectedSortingExample],
   providers: []
 })

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { City, CityMaker } from './city'
-import { CardColors } from './cardColors.enum'
+import { CardColors,  CardMap } from './cardColors.enum'
 import { DiscardPile } from './discard-pile';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 /**
  * @title Drag&Drop connected sorting
  */
@@ -12,6 +13,22 @@ import { DiscardPile } from './discard-pile';
 })
 
 export class CdkDragDropConnectedSortingExample {
+
+  constructor(public dialog: MatDialog) { }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddCityDialog, {
+      width: '250px', height: '350px', position: {
+        top: '100px',
+        left: '450px',
+      },
+      data: CityMaker.create("","")
+    });
+
+    dialogRef.afterClosed().subscribe(result => {      
+      this.infectionDeck.push(result);
+    });
+  }
 
   infectionDeck: City[] = [
     CityMaker.create("NEW YORK", CardColors.BLUE),
@@ -34,4 +51,28 @@ export class CdkDragDropConnectedSortingExample {
   public set discardPile(value: DiscardPile) {
     this._discardPile = value;
   }
+
+
+}
+
+@Component({
+  selector: 'add-city-dialog',
+  templateUrl: 'add-city-dialog.html',
+})
+export class AddCityDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<AddCityDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: City) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  cards: CardMap[] = [
+    { value: '1BlueInfectionCard.png', viewValue: 'BLUE' },
+    { value: '2YellowInfectionCard.png', viewValue: 'YELLOW' },
+    { value: '3BlackInfectionCard.png', viewValue: 'BLACK' },
+    { value: '4RedInfectionCard.png', viewValue: 'RED' }
+  ];
 }

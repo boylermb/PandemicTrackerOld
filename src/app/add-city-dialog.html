@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Add City</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+      <input matInput placeholder="City" [(ngModel)]="data.name">   
+  </mat-form-field>
+  <mat-form-field>
+      <mat-select placeholder="Select Color" [(ngModel)]="data.color" >
+          <mat-option *ngFor="let card of cards"  [value]= "card.value">{{card.viewValue}}</mat-option>
+        </mat-select>      
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Add</button>
+</div>

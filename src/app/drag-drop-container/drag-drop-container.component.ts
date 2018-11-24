@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
 import { City } from '../city'
-import { CardColors } from '../cardColors.enum'
 
 @Component({
   selector: 'app-drag-drop-container',
